@@ -2,7 +2,8 @@
 FROM centos:centos7
 
 # Install the Apache HTTP server package from the CentOS repository
-RUN yum install httpd -y
+RUN yum update && \
+    yum install httpd -y
 
 # Copy the index.html file from the Docker build context to the default Apache document root directory in the container
 COPY index.html /var/www/html/
